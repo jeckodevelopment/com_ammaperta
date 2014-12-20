@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_ammaperta</name>
+    <creationDate>2014-02-19</creationDate>
+    <copyright>Copyright (C) 2014 Jecko Development. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Luca Marzo</author>
+    <authorEmail>info@jeckodevelopment.com</authorEmail>
+    <authorUrl>http://www.jeckodevelopment.com</authorUrl>
+    <version>1.0.0</version>
+    <description>Amministrazione Aperta, componente per la pubblicazione degli Atti di Concessione nella sezione "Sovvenzioni, contributi, sussidi, vantaggi economici" dell'Amministrazione Trasparente come da art. 26 c. 2 del D. Lgs. 33/2013 e art. 27 del D. Lgs. 33/2013</description>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>ammaperta.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="it-IT">language/it-IT.com_ammaperta.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_ammaperta/assets/images/s_com_ammaperta.png" >COM_AMMAPERTA</menu>
+        <submenu>
+            
+			<menu link="option=com_ammaperta&amp;view=concessioni" view="concessioni" img="components/com_ammaperta/assets/images/s_concessioni.png" alt="Ammaperta/Concessioni">COM_AMMAPERTA_TITLE_CONCESSIONI</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>ammaperta.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="it-IT">language/it-IT.com_ammaperta.ini</language>
+			<language tag="it-IT">language/it-IT.com_ammaperta.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+
